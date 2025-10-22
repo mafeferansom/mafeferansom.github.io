@@ -160,8 +160,8 @@ body {
 }
 
 .hero-buttons {
-    padding-left: 10rem;
-    padding-right: 10rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
     display: flex;
     gap: 1rem;
     margin-top: 2rem;
@@ -469,4 +469,5 @@ section {
     .cards-container {
         grid-template-columns: 1fr;
     }
+
 }
