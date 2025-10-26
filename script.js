@@ -1,31 +1,3 @@
-
-
-// script.js
-// Dark Mode Toggle
-const themeToggle = document.getElementById('theme-toggle');
-const body = document.body;
-
-// Check for saved theme preference or default to light mode
-const currentTheme = localStorage.getItem('theme') || 'light';
-if (currentTheme === 'dark') {
-    body.setAttribute('data-theme', 'dark');
-    themeToggle.textContent = 'Light Mode';
-} else {
-    themeToggle.textContent = 'Dark Mode';
-}
-
-themeToggle.addEventListener('click', () => {
-    if (body.getAttribute('data-theme') === 'dark') {
-        body.removeAttribute('data-theme');
-        themeToggle.textContent = 'Dark Mode';
-        localStorage.setItem('theme', 'light');
-    } else {
-        body.setAttribute('data-theme', 'dark');
-        themeToggle.textContent = 'Light Mode';
-        localStorage.setItem('theme', 'dark');
-    }
-});
-
 // Mobile Navigation Toggle
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('nav-menu');
@@ -95,5 +67,13 @@ window.addEventListener('scroll', () => {
         navbar.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
     } else {
         navbar.style.boxShadow = 'none';
+    }
+});
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
     }
 });
