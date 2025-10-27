@@ -59,7 +59,7 @@ body {
 /* Logo Styles */
 .logo-img {
     height: 40px;
-    width: 40px;
+    width: auto;
     margin-right: 10px;
     vertical-align: middle;
 }
@@ -552,5 +552,6 @@ section {
         padding: 3rem 0;
     }
 }
+
 
 
