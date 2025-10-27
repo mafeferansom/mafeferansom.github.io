@@ -60,6 +60,7 @@ body {
 .logo-img {
     height: 40px;
     width: auto;
+    max-width: 120px;
     margin-right: 10px;
     vertical-align: middle;
 }
@@ -552,6 +553,7 @@ section {
         padding: 3rem 0;
     }
 }
+
 
 
 
