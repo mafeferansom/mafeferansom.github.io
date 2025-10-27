@@ -81,8 +81,8 @@ body {
 }
 
 .logo span {
-    color: var(--accent);
     padding-left: 8px;
+    color: var(--accent);
 }
 
 .nav-menu {
@@ -555,6 +555,7 @@ section {
         padding: 3rem 0;
     }
 }
+
 
 
 
