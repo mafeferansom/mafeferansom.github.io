@@ -9,8 +9,8 @@
     --shadow: 4px 4px 12px rgba(0, 0, 0, 0.4);
     --secondary-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);
     --transition: all 0.3s ease;
-    --gradient: linear-gradient(to right, #dda74f,#e49414);
-    --secondary-gradient: linear-gradient(to left,#dda74f,#e98620c);
+    --gradient: linear-gradient(to right, #dda74f,#98620c);
+    --secondary-gradient: linear-gradient(to left,#dda74f,#e49414);
 }
 
 * {
@@ -531,6 +531,7 @@ section {
         padding: 3rem 0;
     }
 }
+
 
 
 
