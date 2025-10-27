@@ -56,6 +56,21 @@ body {
     align-items: center;
     padding: 1rem 11rem;
 }
+/* Logo Styles */
+.logo-img {
+    height: 40px;
+    width: auto;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+}
 
 .logo {
     font-size: 1.5rem;
@@ -531,6 +546,7 @@ section {
         padding: 3rem 0;
     }
 }
+
 
 
 
