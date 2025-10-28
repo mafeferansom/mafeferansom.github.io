@@ -441,34 +441,20 @@ section {
         font-size: 0.9rem;
     }
     
-   /* Hero Section Full Width Fix for Mobile */
-@media (max-width: 768px) {
+    /* Hero Section */
     .hero {
         margin-top: 60px;
         margin-bottom: 20px;
         border-radius: 15px;
-        
-    }
-    
-    .hero .container {
-        width: 100%;
-        max-width: none;
-        padding: 0;
     }
     
     .hero-background {
-        border-radius: 0;
+        height: 400px;
         width: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
     }
-}
-
-@media (max-width: 576px) {
-    .hero {
-        width: 100vw;
-        margin-left: calc(-50vw + 50%);
-        margin-right: calc(-50vw + 50%);
-    }
-}
     
     .hero-content h1 {
         font-size: 1.8rem;
@@ -595,8 +581,9 @@ section {
     .hero-background {
         height: 350px;
         width: 100%;
-        margin-left: 0;
-        margin-right: 0;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
     }
     
     .hero-content h1 {
@@ -753,8 +740,10 @@ section {
         height: 400px;
         border-radius: 0;
         width: 100%;
-        margin-left: 0;
-        margin-right: 0;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
     
     .hero-content h1 {
         font-size: 1.8rem;
@@ -924,8 +913,9 @@ section {
         height: 400px;
         border-radius: 0;
         width: 100%;
-        margin-left: 0;
-        margin-right: 0;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
     }
     
     .hero-content h1 {
@@ -1032,12 +1022,6 @@ section {
     text-align: center;
     width: 100%;
 }
-
-
-
-
-
-
 
 
 
