@@ -446,12 +446,12 @@ section {
         margin-top: 60px;
         margin-bottom: 20px;
         border-radius: 15px;
-        margin-left: 0px;
-        margin-right: 0px;
+    
     }
     
     .hero-background {
         height: 400px;
+        width: 400px;
         width: 100%;
         margin-left: 0;
         margin-right: 0;
@@ -1019,6 +1019,7 @@ section {
     text-align: center;
     width: 100%;
 }
+
 
 
 
