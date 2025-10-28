@@ -1023,35 +1023,6 @@ section {
     width: 100%;
 }
 
-/* Map Styles */
-.map-container {
-    margin-top: 1.5rem;
-}
 
-#map {
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-}
-
-.map-note {
-    font-size: 0.9rem;
-    margin-top: 0.5rem;
-    color: var(--medium-gray);
-    text-align: center;
-}
-
-/* Mobile responsive map */
-@media (max-width: 768px) {
-    #map {
-        height: 250px !important;
-    }
-}
-
-@media (max-width: 576px) {
-    #map {
-        height: 200px !important;
-    }
-}
 
 
