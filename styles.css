@@ -450,6 +450,10 @@ section {
     
     .hero-background {
         height: 400px;
+        width: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
     }
     
     .hero-content h1 {
@@ -576,6 +580,10 @@ section {
     
     .hero-background {
         height: 350px;
+        width: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
     }
     
     .hero-content h1 {
@@ -731,6 +739,10 @@ section {
     .hero-background {
         height: 400px;
         border-radius: 0;
+        width: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
     }
     
     .hero-content h1 {
@@ -900,6 +912,10 @@ section {
     .hero-background {
         height: 400px;
         border-radius: 0;
+        width: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
     }
     
     .hero-content h1 {
@@ -1006,4 +1022,5 @@ section {
     text-align: center;
     width: 100%;
 }
+
 
