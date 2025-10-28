@@ -454,7 +454,8 @@ section {
         width: 100%;
         max-width: none;
         padding: 0;
-    }.hero-background {
+    }
+    .hero-background {
         border-radius: 0;
         width: 100%;
     }
@@ -1025,6 +1026,7 @@ section {
     text-align: center;
     width: 100%;
 }
+
 
 
 
