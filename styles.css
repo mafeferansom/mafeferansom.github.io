@@ -730,6 +730,7 @@ section {
     
     .hero-background {
         height: 400px;
+        border-radius: 0;
     }
     
     .hero-content h1 {
@@ -898,6 +899,7 @@ section {
     
     .hero-background {
         height: 400px;
+        border-radius: 0;
     }
     
     .hero-content h1 {
@@ -1004,3 +1006,4 @@ section {
     text-align: center;
     width: 100%;
 }
+
