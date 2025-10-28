@@ -754,29 +754,29 @@ section {
     }
     
     .glass-panel {
-        padding: 20px 12px; /* Reduced from 25px 15px */
+        padding: 10px 5px; /* Reduced from 20px 12px */
         border-radius: 15px;
     }
     
     .feature-item {
-        padding: 12px 8px; /* Reduced from 15px 10px */
+        padding: 5px 2px; /* Reduced from 15px 10px */
     }
     
     .feature-icon {
-        font-size: 1.8rem;
-        height: 60px;
-        width: 60px;
+        font-size: 1.4rem;
+        height: 50px;
+        width: 50px;
         margin-bottom: 12px; /* Reduced */
     }
     
     .feature-item h3 {
-        font-size: 1.1rem;
+        font-size: 0.6rem;
         margin-bottom: 6px; /* Reduced */
     }
     
     .feature-item p {
-        font-size: 0.85rem;
-        line-height: 1.4;
+        font-size: 0.6rem;
+        line-height: 1.2;
         margin-bottom: 0; /* Remove bottom margin */
     }
     
@@ -873,31 +873,31 @@ section {
     
     /* Glass panel - further reduced padding */
     .glass-panel {
-        padding: 15px 10px; /* Further reduced */
+        padding: 10px 5px; /* Further reduced */
     }
     
     .feature-item {
-        padding: 10px 6px; /* Further reduced */
+        padding: 5px 2px; /* Further reduced */
     }
     
     .feature-icon {
         font-size: 1.6rem;
         height: 50px;
         width: 50px;
-        margin-bottom: 10px;
+        margin-bottom: 5px;
     }
     
     .feature-item h3 {
-        font-size: 1rem;
+        font-size: 0.8rem;
         margin-bottom: 5px;
     }
     
     .feature-item p {
-        font-size: 0.8rem;
+        font-size: 0.6rem;
     }
     
     .hero-background {
-        height: 350px;
+        height: 400px;
     }
     
     .hero-content h1 {
