@@ -441,21 +441,35 @@ section {
         font-size: 0.9rem;
     }
     
-    /* Hero Section */
+   /* Hero Section Full Width Fix for Mobile */
+@media (max-width: 768px) {
     .hero {
-        margin-top: 60px;
-        margin-bottom: 20px;
-        border-radius: 15px;
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        margin-right: calc(-50vw + 50%);
+        border-radius: 0;
+        max-width: none;
+    }
     
+    .hero .container {
+        width: 100%;
+        max-width: none;
+        padding: 0;
     }
     
     .hero-background {
-        height: 400px;
-        width: 400px;
+        border-radius: 0;
         width: 100%;
-        margin-left: 0;
-        margin-right: 0;
     }
+}
+
+@media (max-width: 576px) {
+    .hero {
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        margin-right: calc(-50vw + 50%);
+    }
+}
     
     .hero-content h1 {
         font-size: 1.8rem;
@@ -1019,6 +1033,7 @@ section {
     text-align: center;
     width: 100%;
 }
+
 
 
 
