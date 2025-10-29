@@ -126,6 +126,7 @@ body {
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     margin-bottom: 40px;
+    align: center;
 }
 
 .hero-background {
@@ -1022,6 +1023,7 @@ section {
     text-align: center;
     width: 100%;
 }
+
 
 
 
