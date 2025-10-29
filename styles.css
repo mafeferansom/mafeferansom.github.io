@@ -138,6 +138,8 @@ body {
     align-items: center;
     justify-content: center;
     border-radius: 20px;
+    padding-right: 40px;
+    padding-left: 40px;
 }
 
 .hero-content {
@@ -1150,6 +1152,7 @@ section {
         font-size: 0.9rem;
     }
 }
+
 
 
 
