@@ -121,13 +121,12 @@ body {
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     margin-bottom: 40px;
-    margin-left: 80px;
+    margin-left: 80px; 
     margin-right: 80px;
 }
 
 .hero-background {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), 
-                url('Lab.jpg');
+    background: url('Lab.jpg');
     background-size: cover;
     background-position: center;
     height: 600px;
@@ -135,6 +134,8 @@ body {
     align-items: center;
     justify-content: center;
     border-radius: 20px;
+    margin-left: 80px; 
+    margin-right: 80px;
 }
 
 .hero-content {
@@ -780,3 +781,4 @@ section {
         max-width: 60px;
     }
 }
+
