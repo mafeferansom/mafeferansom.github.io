@@ -3,22 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Design Example</title>
-    <link rel="stylesheet" href="style.css"> 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Isotope Analytical Services | Metallurgical Assaying Laboratory</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- For Android Chrome, Firefox, and Opera -->
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- For Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#ffffff">
+
+    <!-- For iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- OR use this for solid color -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
 </head>
 <body>
-
+    <!-- Navigation Bar -->
     <nav class="navbar">
-        <div class="nav-container container">
-            <a href="#" class="logo">
-                <img src="logo.png" alt="Logo" class="logo-img">
-                Lab<span>Name</span>
-            </a>
-            <div class="nav-menu" id="navMenu">
-                <a href="#hero" class="nav-link">Home</a>
-                <a href="#services" class="nav-link">Services</a>
-                <a href="#about" class="nav-link">About</a>
+        <div class="nav-container">
+            <div class="logo">
+                <img src="logo.png" alt="Isotope-logo" class="logo-img">
+                Isotope <span> Analytical Services</span></div>
+                <div class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About Us</a>
                 <a href="#pricing" class="nav-link">Pricing</a>
                 <a href="#contact" class="nav-link">Contact</a>
                 <a href="#faq" class="nav-link">FAQ</a>
@@ -31,238 +41,216 @@
         </div>
     </nav>
 
-    <section id="hero" class="hero">
+    <!-- Hero Section -->
+    <section id="home" class="hero-container">
         <div class="hero-background">
             <div class="hero-content">
-                <h1>Precision Science, Personalized Care</h1>
-                <p>Advanced diagnostic testing with fast, accurate, and reliable results right at your fingertips.</p>
-                <a href="#services" class="btn primary">Explore Services</a>
+                
+                <p>Isotope Analytical Services is a premier metallurgical assaying laboratory located in Shurugwi, Zimbabwe. We specialize in precise testing for gold, platinum, lithium, and other minerals using state-of-the-art analytical techniques.</p>
+                <p>Our expertise primarily focuses on AAS (Atomic Absorption Spectroscopy) testing and Fire Assay methods, delivering accurate and reliable results for mining operations and exploration companies.</p>
+            
+                <a href="#pricing" class="btn primary"> Explore Our Services</a>
             </div>
         </div>
     </section>
 
-    <section id="features" class="features">
-        <div class="glass-panel container">
+    <!-- Features/Value Proposition Section -->
+    <section class="features container">
+        <div class="glass-panel">
             <div class="features-grid">
                 <div class="feature-item">
-                    <div class="feature-icon"><i class="fas fa-microscope"></i></div>
-                    <h3>Advanced Technology</h3>
-                    <p>Utilizing state-of-the-art equipment for the highest precision.</p>
+                    <div class="feature-icon">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <h3>Precision Testing</h3>
+                    <p>Conveniently synergies state-of-the-art technology with rigorous methodologies</p>
                 </div>
                 <div class="feature-item">
-                    <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
-                    <h3>Certified Experts</h3>
-                    <p>Our lab is staffed by board-certified and experienced professionals.</p>
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Quick Results</h3>
+                    <p>At our lab, we prioritize efficiency without compomising accuracy. Our streamlined processes ensure that you receive your results swiftly.</p>
                 </div>
                 <div class="feature-item">
-                    <div class="feature-icon"><i class="fas fa-clock"></i></div>
-                    <h3>Fast Results</h3>
-                    <p>Get your confidential results delivered quickly via our secure portal.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    ---
-
-    <section id="services" class="services">
-        <div class="container">
-            <h2 class="section-title">Our Diagnostic Services</h2>
-            <div class="cards-container">
-                <div class="card">
-                    <div class="card-image">
-                        <img src="blood-test.jpg" alt="Blood test equipment">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-tie"></i>
                     </div>
-                    <h3>Standard Blood Panel</h3>
-                    <p>Comprehensive analysis of blood components for general health check-ups.</p>
-                    <a href="#" class="btn primary">View Details</a>
-                </div>
-                <div class="card">
-                    <div class="card-image">
-                        <img src="molecular-test.jpg" alt="Molecular testing equipment">
-                    </div>
-                    <h3>Molecular Diagnostics</h3>
-                    <p>Cutting-edge testing for genetic and infectious diseases.</p>
-                    <a href="#" class="btn primary">View Details</a>
-                </div>
-                <div class="card">
-                    <div class="card-image">
-                        <img src="pathology.jpg" alt="Pathology samples">
-                    </div>
-                    <h3>Anatomic Pathology</h3>
-                    <p>Expert tissue analysis for accurate diagnosis and staging.</p>
-                    <a href="#" class="btn primary">View Details</a>
+                    <h3>Expertise</h3>
+                    <p>Our testing is built upon a foundation of expertise with every test being conducted by highly-skilled proffessionals.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    ---
-
+    <!-- About Us Section -->
     <section id="about" class="about">
         <div class="container">
-            <h2 class="section-title">Who We Are</h2>
-            <div class="card">
-                <h3>Our Mission</h3>
-                <p>We are dedicated to providing the highest quality laboratory services to clinicians and patients. Founded on principles of integrity and innovation, we strive to be your trusted partner in health diagnostics.</p>
-                <p>Our commitment to excellence is reflected in our rigorous quality assurance protocols and our continuous adoption of the latest scientific advancements.</p>
-            </div>
-        </div>
-    </section>
-
-    ---
-
-    <section id="pricing" class="pricing">
-        <div class="container">
-            <h2 class="section-title">Pricing Plans</h2>
+            <h2 class="section-title">About Us</h2>
             <div class="cards-container">
                 <div class="card">
-                    <h3>Basic Wellness</h3>
-                    <p>Annual check-up, complete blood count (CBC), and lipid panel.</p>
-                    <ul>
-                        <li><i class="fas fa-check-circle" style="color: var(--accent);"></i> Fast Turnaround</li>
-                        <li><i class="fas fa-check-circle" style="color: var(--accent);"></i> Secure Online Access</li>
-                        <li><i class="fas fa-check-circle" style="color: var(--accent);"></i> Physician Consultation</li>
-                    </ul>
-                    <div class="price">$99</div>
-                    <a href="#" class="btn primary" style="margin-top: 1rem;">Choose Plan</a>
+                    <h3>Our Mission</h3>
+                    <p>To provide accurate, reliable, and timely metallurgical assaying services that empower mining operations with the data needed to make informed decisions and maximize resource value.</p>
                 </div>
                 <div class="card">
-                    <h3>Advanced Diagnostic</h3>
-                    <p>Includes Basic Wellness plus hormone levels, vitamin D, and comprehensive metabolic panel.</p>
-                    <ul>
-                        <li><i class="fas fa-check-circle" style="color: var(--accent);"></i> Priority Testing</li>
-                        <li><i class="fas fa-check-circle" style="color: var(--accent);"></i> Dedicated Support</li>
-                        <li><i class="fas fa-check-circle" style="color: var(--accent);"></i> Includes Basic Wellness</li>
-                    </ul>
-                    <div class="price">$199</div>
-                    <a href="#" class="btn primary" style="margin-top: 1rem;">Choose Plan</a>
+                    <h3>Our Vision</h3>
+                    <p>To become Zimbabwe's leading analytical laboratory, recognized for excellence in mineral testing and commitment to advancing the mining industry through innovative analytical solutions.</p>
                 </div>
                 <div class="card">
-                    <h3>Premium Molecular</h3>
-                    <p>Includes Advanced Diagnostic plus genetic screening or advanced infectious disease testing.</p>
+                    <h3>Our Values</h3>
                     <ul>
-                        <li><i class="fas fa-check-circle" style="color: var(--accent);"></i> All-inclusive Testing</li>
-                        <li><i class="fas fa-check-circle" style="color: var(--accent);"></i> Genetic Counseling</li>
-                        <li><i class="fas fa-check-circle" style="color: var(--accent);"></i> Exclusive Reporting</li>
+                        <li>Accuracy and Precision in all testing procedures</li>
+                        <li>Integrity in reporting and client interactions</li>
+                        <li>Innovation in analytical methodologies</li>
+                        <li>Commitment to timely delivery of results</li>
+                        <li>Environmental responsibility in operations</li>
                     </ul>
-                    <div class="price">$349</div>
-                    <a href="#" class="btn primary" style="margin-top: 1rem;">Choose Plan</a>
                 </div>
             </div>
         </div>
     </section>
-    
-    ---
 
-    <section id="contact" class="contact">
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
         <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="card">
-                <h3>Visit Our Location</h3>
-                <p>We are located in the heart of the city and ready to assist you.</p>
-
-                <div class="address-container">
-                    <a href="https://maps.google.com/?q=123+Main+Street" target="_blank" class="address-link">
-                        <div class="address-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="address-text">
-                            <strong>Lab Diagnostics Center</strong>
-                            <p>123 Main Street, Suite 400, Anytown, CA 90210</p>
-                        </div>
-                    </a>
-                    <a href="https://maps.google.com/?q=123+Main+Street" target="_blank" class="maps-btn">
-                        <i class="fas fa-location-arrow"></i> Get Directions
-                    </a>
-                    <p class="map-note">Operating hours: Mon-Fri, 8:00 AM - 5:00 PM</p>
+            <h2 class="section-title">Our Services & Pricing</h2>
+            <div class="cards-container">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="aas.jpg" alt="AAS Testing">
+                    </div>
+                    <div class="card-content">
+                        <h3>AAS Testing</h3>
+                        <p>Atomic Absorption Spectroscopy (AAS) testing for precise elemental analysis of gold, platinum, and other minerals with high accuracy and sensitivity.</p>
+                        <div class="price">$2 per sample</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image">
+                        <img src="fire-assay.jpg" alt="Fire Assay">
+                    </div>
+                    <div class="card-content">
+                        <h3>Fire Assay</h3>
+                        <p>Traditional fire assay method for gold and precious metals analysis, known for its high accuracy and reliability in determining precious metal content.</p>
+                        <div class="price">$20 per sample</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image">
+                        <img src="platinum.avif" alt="Platinum Testing">
+                    </div>
+                    <div class="card-content">
+                        <h3>Platinum Testing</h3>
+                        <p>Specialized testing services for platinum group metals (PGMs) using advanced analytical techniques to ensure accurate quantification.</p>
+                        <div class="price">Coming Soon</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-image">
+                        <img src="lithium.jpg" alt="Lithium Testing">
+                    </div>
+                    <div class="card-content">
+                        <h3>Lithium Testing</h3>
+                        <p>Comprehensive lithium analysis for battery-grade materials and mining exploration samples using modern analytical instrumentation.</p>
+                        <div class="price">Coming Soon</div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    
-    ---
 
+      <!-- Contact Section -->
+<section id="contact" class="contact">
+    <div class="container">
+        <h2 class="section-title">Contact Us</h2>
+        <div class="cards-container">
+            <div class="card">
+                <h3>Address</h3>
+                <p>Isotope Analytical Services<br>Shurugwi, Zimbabwe</p>
+                <div class="address-container">
+                    <a href="https://maps.google.com/?q=-19.6454013,29.9659697" 
+                       target="_blank" 
+                       class="btn maps-btn">
+                        <i class="fas fa-map-marker-alt"></i>
+                        Open in Google Maps
+                    </a>
+                </div>
+            </div>
+            <div class="card">
+                <h3>Email</h3>
+                <p>mazambaninyashadavid@gmail.com</p>
+                <a href="mailto:mazambaninyashadavid@gmail.com" class="btn secondary">Send Email</a>
+            </div>
+            <div class="card">
+                <h3>Phone</h3>
+                <p>+263 77 159 5204</p>
+                <a href="tel:+263771595204" class="btn secondary">Call Now</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- FAQ Section -->
     <section id="faq" class="faq">
         <div class="container">
             <h2 class="section-title">Frequently Asked Questions</h2>
             <div class="faq-container">
                 <div class="faq-item">
                     <button class="faq-question">
-                        How long does it take to get results?
+                        What is the turnaround time for test results?
                         <span class="faq-toggle">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>Most routine results are available within 24-48 hours. Specialized tests may take longer. You will receive an email notification as soon as your results are ready in our secure portal.</p>
+                        <p>Standard turnaround time for AAS testing is 2-3 business days, while Fire Assay results are typically available within 5-7 business days. Rush services may be available for an additional fee.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-question">
-                        Do I need an appointment?
+                        What is the minimum sample size required?
                         <span class="faq-toggle">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>For most standard tests, walk-ins are welcome. However, we highly recommend booking an appointment online to ensure minimal wait time and efficient service.</p>
+                        <p>For AAS testing, we require a minimum of 50g of sample material. For Fire Assay, we need at least 30g. Please contact us for specific requirements based on your mineral type.</p>
                     </div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-question">
-                        Are your services covered by insurance?
+                        Do you provide sample collection services?
                         <span class="faq-toggle">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>We accept a wide range of insurance providers. Please contact our billing department or check your policy details for coverage specifics.</p>
+                        <p>Yes, we offer sample collection services for clients within a 100km radius of our laboratory. Additional charges apply based on distance and sample volume.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What quality control measures do you have in place?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We implement rigorous quality control procedures including duplicate samples, certified reference materials, and participation in proficiency testing programs to ensure accurate and reliable results.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Can you test for minerals other than gold?
+                        <span class="faq-toggle">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, we specialize in testing for gold, platinum, and lithium, but we can also analyze other minerals. Please contact us to discuss your specific testing requirements.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 LabName Diagnostics. All rights reserved.</p>
+            <p>&copy; 2023 Isotope Analytical Services. All rights reserved.</p>
         </div>
     </footer>
 
-    <script>
-        const hamburger = document.getElementById('hamburger');
-        const navMenu = document.getElementById('navMenu');
-        const navLinks = document.querySelectorAll('.nav-link');
-        const faqQuestions = document.querySelectorAll('.faq-question');
-
-        // Mobile Menu Toggle
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navMenu.classList.toggle('active');
-        });
-
-        // Close menu when a link is clicked
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navMenu.classList.remove('active');
-            });
-        });
-
-        // FAQ Toggle
-        faqQuestions.forEach(question => {
-            question.addEventListener('click', () => {
-                const answer = question.nextElementSibling;
-                const toggle = question.querySelector('.faq-toggle');
-                
-                // Close all others
-                faqQuestions.forEach(q => {
-                    if (q !== question) {
-                        q.nextElementSibling.classList.remove('active');
-                        q.querySelector('.faq-toggle').textContent = '+';
-                    }
-                });
-
-                // Toggle the clicked one
-                answer.classList.toggle('active');
-                toggle.textContent = answer.classList.contains('active') ? '-' : '+';
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
