@@ -114,15 +114,15 @@ body {
 }
 
 /* ===== HERO SECTION ===== */
-.hero {
+.hero-container {
     margin-top: 80px;
     position: relative;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     margin-bottom: 40px;
-    margin-left: 80px;
-    margin-right: 80px;
+    margin-left: 80px;  /* Added left gap */
+    margin-right: 80px; /* Added right gap */
 }
 
 .hero-background {
@@ -214,7 +214,7 @@ body {
 /* ===== FEATURES SECTION ===== */
 .features {
     position: relative;
-    margin-top: -100px;
+    margin-top: -150px; /* Changed from -100px to -150px to raise glass panel higher */
     z-index: 10;
     background-position: center;
     display: flex;
@@ -508,16 +508,16 @@ section {
     }
     
     /* Hero Section */
-    .hero {
+    .hero-container {
         width: 100%;
-        margin-left: 0;
-        margin-right: 0;
-        border-radius: 0;
+        margin-left: 0;  /* Remove gaps for mobile */
+        margin-right: 0; /* Remove gaps for mobile */
+        border-radius: 0; /* Remove border radius for full width */
     }
     
     .hero-background {
         height: 400px;
-        border-radius: 0;
+        border-radius: 0; /* Remove border radius for full width */
         width: 100%;
         background-size: cover;
         background-repeat: no-repeat;
@@ -537,7 +537,7 @@ section {
     
     /* Features Section */
     .features {
-        margin-top: -40px;
+        margin-top: -80px; /* Raise glass panel to cover part of hero image on mobile */
     }
     
     .glass-panel {
