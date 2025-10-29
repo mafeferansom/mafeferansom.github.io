@@ -443,9 +443,7 @@ section {
     
     /* Hero Section */
     .hero {
-        margin-top: 60px;
-        margin-bottom: 20px;
-        border-radius: 15px;
+       width: 100%;
     }
     
     .hero-background {
@@ -1151,6 +1149,7 @@ section {
         font-size: 0.9rem;
     }
 }
+
 
 
 
