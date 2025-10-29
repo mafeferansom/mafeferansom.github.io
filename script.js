@@ -77,4 +77,3 @@ document.addEventListener('click', (e) => {
         navMenu.classList.remove('active');
     }
 });
-
