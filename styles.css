@@ -147,8 +147,6 @@ body {
     color: white;
     max-width: 800px;
     padding: 0 20px;
-    padding-top: 40px;
-    padding-bottom: 20px;
 }
 
 .hero-content h1 {
@@ -473,11 +471,13 @@ section {
         font-size: 0.95rem;
         margin-bottom: 20px;
         line-height: 1.5;
+        margin-top: 40px;
     }
     
     .btn.primary {
         padding: 0.7rem 1.3rem;
         font-size: 0.9rem;
+        margin-bottom: 20px;
     }
     
     /* Features Section */
@@ -1154,6 +1154,7 @@ section {
         font-size: 0.9rem;
     }
 }
+
 
 
 
