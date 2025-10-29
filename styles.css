@@ -733,7 +733,12 @@ section {
     .hero {
         margin-top: 60px;
         margin-bottom: 20px;
-        border-radius: 15px;
+    
+    }
+    .hero-container {
+        width: 100%;
+        maxwi-width: none;
+        padding: 0;
     }
     
     .hero-background {
@@ -1146,6 +1151,7 @@ section {
         font-size: 0.9rem;
     }
 }
+
 
 
 
