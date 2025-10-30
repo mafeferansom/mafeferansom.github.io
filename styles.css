@@ -596,6 +596,9 @@ footer {
         border-radius: 0;
         width: 100%;
     }
+    .hero-content .p {
+        font-size: 1rem:
+    }
     
     /* Consistent margins for all sections */
     .container {
@@ -702,3 +705,4 @@ footer {
         max-width: 1200px;
     }
 }
+
