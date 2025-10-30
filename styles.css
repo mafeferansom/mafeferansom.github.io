@@ -537,7 +537,7 @@ footer {
     /* Features Grid */
     .features-grid {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 10px;
     }
     
     /* Hero adjustments for mobile */
@@ -560,7 +560,7 @@ footer {
     
     /* Smaller logo for mobile */
     .logo {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
         white-space: nowrap;
     }
     
@@ -601,6 +601,10 @@ footer {
     .features {
         margin-top: -60px; /* Reduced negative margin */
         padding: 0 20px; /* Consistent side margins */
+    }
+    .feature-icon {
+        height: 20px;
+        padding-bottom: 5px;
     }
     
     .section-title {
@@ -727,3 +731,4 @@ footer {
         max-width: 1200px;
     }
 }
+
