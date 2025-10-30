@@ -585,6 +585,7 @@ footer {
     
     .hero-content {
         padding: 20px; /* Reduced padding */
+        font-size: 1rem;
     }
     
     /* Consistent margins for all sections */
@@ -602,15 +603,18 @@ footer {
         margin-top: -60px; /* Reduced negative margin */
         padding: 0 20px; /* Consistent side margins */
     }
+    
     .feature-icon {
-        height: 20px;
-        padding-bottom: 5px;
+        height: 10px;
+        padding-bottom: 2px;
     }
+    
     .feature-item .h3 {
-        font-size: 0.6rem;
+        font-size: 0.4rem;
     }
+    
     .feature-item .p {
-        font-size: 0.6rem;
+        font-size: 0.4rem;
     }
     
     .section-title {
@@ -624,7 +628,7 @@ footer {
     
     /* Ensure all sections have consistent margins */
     section .container {
-        padding: 0 20px;
+        padding: 0 10px;
     }
     
     /* Reduce section padding for mobile */
@@ -737,5 +741,6 @@ footer {
         max-width: 1200px;
     }
 }
+
 
 
