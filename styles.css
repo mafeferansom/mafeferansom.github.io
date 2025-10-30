@@ -537,7 +537,7 @@ footer {
     /* Features Grid */
     .features-grid {
         grid-template-columns: 1fr;
-        gap: 10px;
+        gap: 20px;
     }
     
     /* Hero adjustments for mobile */
@@ -578,15 +578,13 @@ footer {
     }
     
     .hero-background {
-        height: 400px; /* Reduced height */
+        height: 350px; /* Reduced height */
         border-radius: 0;
         width: 100%;
     }
     
     .hero-content {
         padding: 20px; /* Reduced padding */
-        font-size: 1rem;
-        line-height: 1.5;
     }
     
     /* Consistent margins for all sections */
@@ -596,26 +594,13 @@ footer {
     
     .glass-panel {
         margin: 0;
-        padding: 20px 15px; /* Reduced padding */
+        padding: 25px 20px; /* Reduced padding */
         width: 100%;
     }
     
     .features {
         margin-top: -60px; /* Reduced negative margin */
         padding: 0 20px; /* Consistent side margins */
-    }
-    
-    .feature-icon {
-        height: 10px;
-        padding-bottom: 2px;
-    }
-    
-    .feature-item .h3 {
-        font-size: 0.4rem;
-    }
-    
-    .feature-item .p {
-        font-size: 0.4rem;
     }
     
     .section-title {
@@ -629,7 +614,7 @@ footer {
     
     /* Ensure all sections have consistent margins */
     section .container {
-        padding: 0 10px;
+        padding: 0 20px;
     }
     
     /* Reduce section padding for mobile */
@@ -742,7 +727,3 @@ footer {
         max-width: 1200px;
     }
 }
-
-
-
-
