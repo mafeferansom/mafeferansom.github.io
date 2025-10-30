@@ -15,9 +15,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 }
                 
                 // Smooth scroll to target
-                targetElement.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
+                const offsetTop = targetElement.offsetTop - 80;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
                 });
             }
         }
@@ -90,7 +91,7 @@ document.addEventListener('click', (e) => {
     }
 });
 
-// FAQ Accordion
+// FAQ Accordion - Fixed functionality
 const faqQuestions = document.querySelectorAll('.faq-question');
 
 faqQuestions.forEach(question => {
@@ -98,21 +99,27 @@ faqQuestions.forEach(question => {
         const answer = question.nextElementSibling;
         const toggle = question.querySelector('.faq-toggle');
         
-        // Close all other FAQ items
+        // Toggle current FAQ item
+        const isActive = answer.classList.contains('active');
+        
+        // Close all FAQ items first
         document.querySelectorAll('.faq-answer').forEach(item => {
-            if (item !== answer) {
-                item.classList.remove('active');
-            }
+            item.classList.remove('active');
         });
         
         document.querySelectorAll('.faq-toggle').forEach(item => {
-            if (item !== toggle) {
-                item.textContent = '+';
-            }
+            item.textContent = '+';
         });
         
-        // Toggle current FAQ item
-        answer.classList.toggle('active');
-        toggle.textContent = answer.classList.contains('active') ? '−' : '+';
+        // If it wasn't active, open it
+        if (!isActive) {
+            answer.classList.add('active');
+            toggle.textContent = '−';
+        }
     });
+});
+
+// Initialize FAQ items to be closed
+document.querySelectorAll('.faq-answer').forEach(answer => {
+    answer.classList.remove('active');
 });
