@@ -548,6 +548,7 @@ footer {
     /* Smaller logo for mobile */
     .logo {
         font-size: 1rem;
+         white-space: nowrap;
     }
     
     .logo-img {
@@ -665,5 +666,6 @@ footer {
         max-width: 1200px;
     }
 }
+
 
 
