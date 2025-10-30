@@ -5,51 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Isotope Analytical Services | Metallurgical Assaying Laboratory</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- For Android Chrome, Firefox, and Opera -->
-    <meta name="theme-color" content="#ffffff">
-
-    <!-- For Windows Phone -->
-    <meta name="msapplication-navbutton-color" content="#ffffff">
-
-    <!-- For iOS Safari -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <!-- OR use this for solid color -->
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="nav-container">
+    <!-- Header/Navigation Bar -->
+    <header>
+        <div class="container nav-container">
             <div class="logo">
                 <img src="logo.png" alt="Isotope-logo" class="logo-img">
                 Isotope <span> Analytical Services</span></div>
-                <div class="nav-menu" id="nav-menu">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#about" class="nav-link">About Us</a>
-                <a href="#pricing" class="nav-link">Pricing</a>
-                <a href="#contact" class="nav-link">Contact</a>
-                <a href="#faq" class="nav-link">FAQ</a>
-            </div>
-            <div class="hamburger" id="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#faqs">FAQs</a></li>
+                </ul>
+            </nav>
+            <div class="cta-buttons">
+                <a href="#pricing" class="btn btn-primary">Services</a>
+                <a href="#contact" class="btn btn-secondary">Contact</a>
             </div>
         </div>
-    </nav>
+    </header>
 
     <!-- Hero Section -->
-    <section id="home" class="hero-container">
+    <section id="home" class="hero container">
         <div class="hero-background">
             <div class="hero-content">
-                
                 <p>Isotope Analytical Services is a premier metallurgical assaying laboratory located in Shurugwi, Zimbabwe. We specialize in precise testing for gold, platinum, lithium, and other minerals using state-of-the-art analytical techniques.</p>
                 <p>Our expertise primarily focuses on AAS (Atomic Absorption Spectroscopy) testing and Fire Assay methods, delivering accurate and reliable results for mining operations and exploration companies.</p>
-            
-                <a href="#pricing" class="btn primary"> Explore Our Services</a>
+                <a href="#pricing" class="btn-primary">Explore our Services</a>
             </div>
         </div>
     </section>
@@ -76,14 +60,13 @@
                     <div class="feature-icon">
                         <i class="fas fa-user-tie"></i>
                     </div>
-                    <h3>Expertise</h3>
+                    <h3>Clear Structure</h3>
                     <p>Our testing is built upon a foundation of expertise with every test being conducted by highly-skilled proffessionals.</p>
                 </div>
             </div>
-        </div>
     </section>
 
-    <!-- About Us Section -->
+        <!-- About Us Section -->
     <section id="about" class="about">
         <div class="container">
             <h2 class="section-title">About Us</h2>
@@ -159,15 +142,15 @@
         </div>
     </section>
 
-      <!-- Contact Section -->
-<section id="contact" class="contact">
-    <div class="container">
-        <h2 class="section-title">Contact Us</h2>
-        <div class="cards-container">
-            <div class="card">
-                <h3>Address</h3>
-                <p>Isotope Analytical Services<br>Shurugwi, Zimbabwe</p>
-                <div class="address-container">
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="cards-container">
+                <div class="card">
+                    <h3>Address</h3>
+                    <p>Isotope Analytical Services<br>Shurugwi, Zimbabwe</p>
+                    <div class="address-container">
                     <a href="https://maps.google.com/?q=-19.6454013,29.9659697" 
                        target="_blank" 
                        class="btn maps-btn">
@@ -175,20 +158,21 @@
                         Open in Google Maps
                     </a>
                 </div>
-            </div>
-            <div class="card">
-                <h3>Email</h3>
-                <p>mazambaninyashadavid@gmail.com</p>
-                <a href="mailto:mazambaninyashadavid@gmail.com" class="btn secondary">Send Email</a>
-            </div>
-            <div class="card">
-                <h3>Phone</h3>
-                <p>+263 77 159 5204</p>
-                <a href="tel:+263771595204" class="btn secondary">Call Now</a>
+
+                </div>
+                <div class="card">
+                    <h3>Email</h3>
+                    <p>info@isotopeanalytical.co.zw</p>
+                    <a href="mailto:info@isotopeanalytical.co.zw" class="btn secondary">Send Email</a>
+                </div>
+                <div class="card">
+                    <h3>Phone</h3>
+                    <p>+263 123 456 789</p>
+                    <a href="tel:+263123456789" class="btn secondary">Call Now</a>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- FAQ Section -->
     <section id="faq" class="faq">
@@ -244,14 +228,13 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2023 Isotope Analytical Services. All rights reserved.</p>
+ 
+            <div class="footer-bottom">
+                <p>&copy; 2023 Isotope Analytical Services. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
 </html>
-
