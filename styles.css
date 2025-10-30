@@ -578,7 +578,7 @@ footer {
     }
     
     .hero-background {
-        height: 350px; /* Reduced height */
+        height: 500px; /* Reduced height */
         border-radius: 0;
         width: 100%;
     }
@@ -727,3 +727,4 @@ footer {
         max-width: 1200px;
     }
 }
+
