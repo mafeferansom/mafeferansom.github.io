@@ -586,6 +586,7 @@ footer {
     .hero-content {
         padding: 20px; /* Reduced padding */
         font-size: 1rem;
+        line-height: 1.5;
     }
     
     /* Consistent margins for all sections */
@@ -741,6 +742,7 @@ footer {
         max-width: 1200px;
     }
 }
+
 
 
 
