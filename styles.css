@@ -150,10 +150,7 @@ nav ul li a:hover {
 .hero {
     margin-top: 80px;
     position: relative;
-    border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    margin-bottom: 40px;
 }
 
 .hero-background {
@@ -225,6 +222,7 @@ nav ul li a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 60px;
 }
 
 /* Ensure Font Awesome icons are visible */
@@ -439,13 +437,15 @@ footer {
         display: none;
     }
     
-    /* Mobile Navigation */
+    /* Mobile Navigation - Moved to left */
     .hamburger {
         display: flex;
         flex-direction: column;
         cursor: pointer;
         padding: 5px;
         z-index: 1001;
+        order: -1; /* Move to left */
+        margin-right: auto; /* Push other items to right */
     }
     
     .hamburger .bar {
@@ -459,37 +459,48 @@ footer {
     nav ul {
         position: fixed;
         top: 80px;
-        right: -100%;
+        left: -100%;
         flex-direction: column;
-        background: rgba(255, 255, 255, 0.4);
+        background: rgba(255, 255, 255, 0.95);
         backdrop-filter: blur(10px);
-        width: 100%;
-        text-align: center;
+        width: 280px;
+        height: calc(100vh - 80px);
+        text-align: left;
         transition: var(--transition);
         padding: 2rem 0;
         box-shadow: var(--shadow);
         z-index: 999;
         border: 1px solid rgba(255, 255, 255, 0.3);
+        margin: 0;
     }
     
     nav ul.active {
-        right: 0;
+        left: 0;
     }
     
     nav ul li {
-        margin: 15px 0;
+        margin: 0;
+        width: 100%;
     }
     
     nav ul li a {
         color: var(--primary-dark);
         font-weight: 600;
-        padding: 10px 20px;
+        padding: 15px 30px;
         display: block;
+        width: 100%;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     }
     
     .mobile-cta {
         display: flex;
         margin-top: 20px;
+        gap: 8px;
+    }
+    
+    .mobile-cta .btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
     }
     
     .hamburger.active .bar:nth-child(2) {
@@ -502,6 +513,18 @@ footer {
     
     .hamburger.active .bar:nth-child(3) {
         transform: translateY(-8px) rotate(-45deg);
+    }
+    
+    /* Adjust nav container for mobile */
+    .nav-container {
+        justify-content: flex-end;
+    }
+    
+    .logo {
+        margin: 0 auto;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
     }
     
     /* Features Grid */
@@ -531,28 +554,35 @@ footer {
         height: 30px;
     }
     
-    /* Hero full width on mobile */
+    /* Hero full width on mobile - fixed margins */
     .hero {
-        margin-top: 100px;
+        margin-top: 70px;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
         border-radius: 0;
-        margin-left: -20px;
-        margin-right: -20px;
-        width: calc(100% + 40px);
-        max-width: none;
     }
     
     .hero-background {
-        height: 400px;
+        height: 500px; /* Increased height */
         border-radius: 0;
+        width: 100%;
+    }
+    
+    /* Consistent margins for all sections */
+    .container {
+        padding: 0 20px; /* Consistent side margins */
     }
     
     .glass-panel {
-        margin: 0 20px;
+        margin: 0;
         padding: 30px 20px;
+        width: 100%;
     }
     
     .features {
         margin-top: -80px;
+        padding: 0 20px; /* Consistent side margins */
     }
     
     .section-title {
@@ -563,12 +593,20 @@ footer {
         padding: 8px 16px;
         font-size: 0.9rem;
     }
+    
+    /* Ensure all sections have consistent margins */
+    section .container {
+        padding: 0 20px;
+    }
 }
 
 /* Small mobile devices */
 @media (max-width: 576px) {
     .logo {
         font-size: 1rem;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
     }
     
     .logo-img {
@@ -576,7 +614,7 @@ footer {
     }
     
     .hero-background {
-        height: 350px;
+        height: 450px; /* Adjusted for smaller screens */
     }
     
     .hero-content p {
@@ -603,5 +641,19 @@ footer {
     
     nav ul {
         top: 70px;
+        height: calc(100vh - 70px);
+    }
+    
+    /* Even smaller buttons in mobile menu */
+    .mobile-cta .btn {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+    }
+}
+
+/* Large desktop screens */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1200px;
     }
 }
