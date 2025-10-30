@@ -577,7 +577,7 @@ footer {
     
     .glass-panel {
         margin: 0;
-        padding: 20px 10px;
+        padding: 30px 20px;
         width: 100%;
     }
     .feature-icon {
@@ -666,6 +666,7 @@ footer {
         max-width: 1200px;
     }
 }
+
 
 
 
