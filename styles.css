@@ -560,7 +560,7 @@ footer {
     
     /* Smaller logo for mobile */
     .logo {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
         white-space: nowrap;
     }
     
@@ -578,7 +578,7 @@ footer {
     }
     
     .hero-background {
-        height: 350px; /* Reduced height */
+        height: 400px; /* Reduced height */
         border-radius: 0;
         width: 100%;
     }
@@ -594,7 +594,7 @@ footer {
     
     .glass-panel {
         margin: 0;
-        padding: 25px 20px; /* Reduced padding */
+        padding: 20px 15px; /* Reduced padding */
         width: 100%;
     }
     
@@ -605,6 +605,12 @@ footer {
     .feature-icon {
         height: 20px;
         padding-bottom: 5px;
+    }
+    .feature-item .h3 {
+        font-size: 0.6rem;
+    }
+    .feature-item .p {
+        font-size: 0.6rem;
     }
     
     .section-title {
@@ -731,4 +737,5 @@ footer {
         max-width: 1200px;
     }
 }
+
 
