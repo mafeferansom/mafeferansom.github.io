@@ -5,36 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Isotope Analytical Services | Metallurgical Assaying Laboratory</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Add Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-   <!-- Header/Navigation Bar -->
-<header>
-    <div class="container nav-container">
-        <div class="logo">
-            <img src="logo.png" alt="Isotope-logo" class="logo-img">
-            Isotope <span> Analytical Services</span>
+    <!-- Header/Navigation Bar -->
+    <header>
+        <div class="container nav-container">
+            <div class="logo">
+                <img src="logo.png" alt="Isotope-logo" class="logo-img">
+                Isotope <span> Analytical Services</span>
+            </div>
+            
+            <!-- Hamburger Menu -->
+            <div class="hamburger" id="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            
+            <nav>
+                <ul id="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#faq">FAQs</a></li>
+                    <!-- Mobile CTA Buttons -->
+                    <div class="mobile-cta">
+                        <a href="#pricing" class="btn btn-primary">Services</a>
+                        <a href="#contact" class="btn btn-secondary">Contact</a>
+                    </div>
+                </ul>
+            </nav>
+            <!-- Desktop CTA Buttons -->
+            <div class="cta-buttons desktop-cta">
+                <a href="#pricing" class="btn btn-primary">Services</a>
+                <a href="#contact" class="btn btn-secondary">Contact</a>
+            </div>
         </div>
-        
-        <!-- Hamburger Menu (added) -->
-        <div class="hamburger" id="hamburger">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-        </div>
-        
-        <nav>
-            <ul id="nav-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#faqs">FAQs</a></li>
-            </ul>
-        </nav>
-        <div class="cta-buttons">
-            <a href="#pricing" class="btn btn-primary">Services</a>
-            <a href="#contact" class="btn btn-secondary">Contact</a>
-        </div>
-    </div>
-</header>
+    </header>
 
     <!-- Hero Section -->
     <section id="home" class="hero container">
@@ -42,7 +50,7 @@
             <div class="hero-content">
                 <p>Isotope Analytical Services is a premier metallurgical assaying laboratory located in Shurugwi, Zimbabwe. We specialize in precise testing for gold, platinum, lithium, and other minerals using state-of-the-art analytical techniques.</p>
                 <p>Our expertise primarily focuses on AAS (Atomic Absorption Spectroscopy) testing and Fire Assay methods, delivering accurate and reliable results for mining operations and exploration companies.</p>
-                <a href="#pricing" class="btn-primary">Explore our Services</a>
+                <a href="#pricing" class="btn btn-primary">Explore our Services</a>
             </div>
         </div>
     </section>
@@ -73,9 +81,10 @@
                     <p>Our testing is built upon a foundation of expertise with every test being conducted by highly-skilled proffessionals.</p>
                 </div>
             </div>
+        </div>
     </section>
 
-        <!-- About Us Section -->
+    <!-- About Us Section -->
     <section id="about" class="about">
         <div class="container">
             <h2 class="section-title">About Us</h2>
@@ -172,12 +181,12 @@
                 <div class="card">
                     <h3>Email</h3>
                     <p>info@isotopeanalytical.co.zw</p>
-                    <a href="mailto:info@isotopeanalytical.co.zw" class="btn secondary">Send Email</a>
+                    <a href="mailto:info@isotopeanalytical.co.zw" class="btn btn-secondary">Send Email</a>
                 </div>
                 <div class="card">
                     <h3>Phone</h3>
                     <p>+263 123 456 789</p>
-                    <a href="tel:+263123456789" class="btn secondary">Call Now</a>
+                    <a href="tel:+263123456789" class="btn btn-secondary">Call Now</a>
                 </div>
             </div>
         </div>
@@ -237,7 +246,8 @@
         </div>
     </section>
 
- 
+    <footer>
+        <div class="container">
             <div class="footer-bottom">
                 <p>&copy; 2023 Isotope Analytical Services. All rights reserved.</p>
             </div>
@@ -247,4 +257,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
