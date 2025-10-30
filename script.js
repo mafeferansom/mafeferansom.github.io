@@ -4,9 +4,22 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         e.preventDefault();
         const targetId = this.getAttribute('href');
         if (targetId !== '#') {
-            document.querySelector(targetId).scrollIntoView({
-                behavior: 'smooth'
-            });
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                // Close mobile menu if open
+                const hamburger = document.getElementById('hamburger');
+                const navMenu = document.getElementById('nav-menu');
+                if (hamburger && navMenu) {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                }
+                
+                // Smooth scroll to target
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
         }
     });
 });
@@ -59,13 +72,23 @@ if (hamburger) {
     });
 }
 
-// Close mobile menu when clicking on a nav link
-document.querySelectorAll('nav a').forEach(n => n.addEventListener('click', () => {
+// Close mobile menu when clicking on a nav link or button
+document.querySelectorAll('nav a, .mobile-cta a').forEach(n => n.addEventListener('click', () => {
     if (hamburger && navMenu) {
         hamburger.classList.remove('active');
         navMenu.classList.remove('active');
     }
 }));
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (hamburger && navMenu && navMenu.classList.contains('active')) {
+        if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        }
+    }
+});
 
 // FAQ Accordion
 const faqQuestions = document.querySelectorAll('.faq-question');
