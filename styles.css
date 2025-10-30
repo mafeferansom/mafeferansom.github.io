@@ -201,7 +201,7 @@ nav ul li a:hover {
     background: rgba(255, 255, 255, 0.4);
     backdrop-filter: blur(10px);
     border-radius: 20px;
-    padding: 40px; /* Original padding */
+    padding: 30px; /* Reduced padding */
     box-shadow: var(--shadow);
     border: 1px solid rgba(255, 255, 255, 0.3);
     max-width: 1000px;
@@ -211,22 +211,22 @@ nav ul li a:hover {
 .features-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    gap: 20px; /* Reduced gap */
 }
 
 .feature-item {
     text-align: center;
-    padding: 20px; /* Original padding */
+    padding: 15px; /* Reduced padding */
 }
 
 .feature-icon {
-    font-size: 2.5rem; /* Original size */
+    font-size: 2rem; /* Smaller icons */
     color: var(--accent);
-    margin-bottom: 20px; /* Original margin */
+    margin-bottom: 15px; /* Reduced margin */
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 60px;
+    height: 50px; /* Reduced height */
 }
 
 /* Ensure Font Awesome icons are visible */
@@ -235,14 +235,16 @@ nav ul li a:hover {
 }
 
 .feature-item h3 {
-    font-size: 1.3rem;
-    margin-bottom: 10px;
+    font-size: 1.2rem; /* Slightly smaller heading */
+    margin-bottom: 8px; /* Reduced margin */
     color: #333;
 }
 
 .feature-item p {
     color: #666;
     font-size: 0.9rem;
+    line-height: 1.4; /* Reduced line spacing */
+    margin-bottom: 0; /* Remove bottom margin */
 }
 
 /* Section Styles */
@@ -540,79 +542,163 @@ footer {
     /* Features Grid */
     .features-grid {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 15px; /* Reduced gap for mobile */
     }
     
     /* REMOVE EXPLORE SERVICES BUTTON IN MOBILE */
     .hero .btn-primary {
         display: none; /* Remove Explore Services button */
     }
-}
-
-/* --- Existing styles above remain unchanged --- */
-
-/* Tablet and smaller devices */
-@media (max-width: 768px) {
+    
+    /* Hero full width on mobile - starts below nav bar */
     .hero {
         margin-top: 80px; /* Start just below nav bar */
         width: 100%;
+        margin-left: 0;
+        margin-right: 0;
         border-radius: 0;
-        overflow: hidden;
     }
-
+    
     .hero-background {
-        height: 400px;
-        width: 100%;
+        height: 400px; /* Original mobile height */
         border-radius: 0;
-        background-size: cover;
-        background-position: center;
+        width: 100%;
     }
+}
 
-    /* Glass panel shorter + tighter spacing */
+/* Tablet and smaller devices */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-wrap: wrap;
+    }
+    
+    /* Smaller logo for mobile */
+    .logo {
+        font-size: 1.2rem;
+        white-space: nowrap;
+    }
+    
+    .logo-img {
+        height: 30px;
+    }
+    
+    /* Hero full width on mobile - fixed margins */
+    .hero {
+        margin-top: 80px; /* Start just below nav bar */
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        border-radius: 0;
+    }
+    
+    .hero-background {
+        height: 400px; /* Original mobile height */
+        border-radius: 0;
+        width: 100%;
+    }
+    
+    /* Consistent margins for all sections */
+    .container {
+        padding: 0 20px; /* Consistent side margins */
+    }
+    
     .glass-panel {
-        margin: 0 15px;
-        padding: 20px 15px;
+        margin: 0 20px; /* Original margin */
+        padding: 20px 15px; /* Reduced padding for mobile */
+        width: 100%;
     }
-
+    
+    .features {
+        margin-top: -60px; /* Reduced negative margin for shorter glass panel */
+        padding: 0 20px; /* Consistent side margins */
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+    
+    /* Ensure all sections have consistent margins */
+    section .container {
+        padding: 0 20px;
+    }
+    
+    /* Smaller feature items for mobile */
     .feature-icon {
-        font-size: 1.8rem; /* smaller icons */
-        margin-bottom: 10px;
+        font-size: 1.8rem; /* Even smaller icons for mobile */
+        margin-bottom: 10px; /* Reduced margin */
+        height: 40px; /* Reduced height */
     }
-
+    
+    .feature-item h3 {
+        font-size: 1.1rem; /* Smaller heading for mobile */
+        margin-bottom: 5px; /* Reduced margin */
+    }
+    
     .feature-item p {
-        margin-bottom: 10px; /* reduced spacing */
-        font-size: 0.85rem;
+        font-size: 0.85rem; /* Slightly smaller text for mobile */
+        line-height: 1.3; /* Reduced line spacing for mobile */
     }
 }
 
 /* Small mobile devices */
 @media (max-width: 576px) {
+    .logo {
+        font-size: 1rem;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        white-space: nowrap;
+    }
+    
+    .logo-img {
+        height: 25px;
+    }
+    
     .hero-background {
-        height: 320px; /* slightly shorter hero */
-        background-size: cover;
-        background-position: center;
+        height: 350px; /* Original small mobile height */
     }
-
+    
+    .cards-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .card {
+        padding: 1.5rem;
+    }
+    
+    nav ul {
+        top: 70px;
+        height: calc(100vh - 70px);
+    }
+    
+    /* Even smaller buttons in mobile menu */
+    .mobile-cta .btn {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+    }
+    
+    /* Further reduce glass panel height for small mobile */
+    .features {
+        margin-top: -50px; /* Further reduced negative margin */
+    }
+    
     .glass-panel {
-        padding: 15px 10px;
-    }
-
-    .feature-icon {
-        font-size: 1.5rem;
-        margin-bottom: 8px;
-    }
-
-    .feature-item p {
-        margin-bottom: 8px;
-        font-size: 0.8rem;
+        padding: 15px 10px; /* Further reduced padding */
     }
 }
-
 
 /* Large desktop screens */
 @media (min-width: 1200px) {
     .container {
         max-width: 1200px;
     }
-
 }
