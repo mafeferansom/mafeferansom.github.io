@@ -576,7 +576,7 @@ footer {
     
     .glass-panel {
         margin: 0;
-        padding: 30px 20px;
+        padding: 20px 10px;
         width: 100%;
     }
     
@@ -657,3 +657,4 @@ footer {
         max-width: 1200px;
     }
 }
+
