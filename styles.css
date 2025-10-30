@@ -59,7 +59,6 @@ header {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--primary-dark);
-    white-space: nowrap; /* Keep single line */
 }
 
 .logo-img {
@@ -147,14 +146,11 @@ nav ul li a:hover {
     background-color: rgba(33, 39, 48, 0.1);
 }
 
-/* Hero Section - REVERTED TO ORIGINAL */
+/* Hero Section */
 .hero {
     margin-top: 80px;
     position: relative;
-    border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    margin-bottom: 40px;
 }
 
 .hero-background {
@@ -162,7 +158,7 @@ nav ul li a:hover {
                 url('Lab.jpg');
     background-size: cover;
     background-position: center;
-    height: 600px; /* Original height */
+    height: 600px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -176,8 +172,8 @@ nav ul li a:hover {
 }
 
 .hero-content p {
-    font-size: 1.2rem; /* Original font size */
-    margin-bottom: 30px; /* Original margin */
+    font-size: 1.2rem;
+    margin-bottom: 30px;
     opacity: 0.9;
 }
 
@@ -187,10 +183,10 @@ nav ul li a:hover {
     border-radius: 30px;
 }
 
-/* Features/Value Proposition Section - REVERTED GLASS PANEL */
+/* Features/Value Proposition Section */
 .features {
     position: relative;
-    margin-top: -100px; /* Original negative margin */
+    margin-top: -100px;
     z-index: 10;
     display: flex;
     align-items: center;
@@ -201,7 +197,7 @@ nav ul li a:hover {
     background: rgba(255, 255, 255, 0.4);
     backdrop-filter: blur(10px);
     border-radius: 20px;
-    padding: 40px; /* Original padding */
+    padding: 40px;
     box-shadow: var(--shadow);
     border: 1px solid rgba(255, 255, 255, 0.3);
     max-width: 1000px;
@@ -216,13 +212,13 @@ nav ul li a:hover {
 
 .feature-item {
     text-align: center;
-    padding: 20px; /* Original padding */
+    padding: 20px;
 }
 
 .feature-icon {
-    font-size: 2.5rem; /* Original size */
+    font-size: 2.5rem;
     color: var(--accent);
-    margin-bottom: 20px; /* Original margin */
+    margin-bottom: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -247,12 +243,12 @@ nav ul li a:hover {
 
 /* Section Styles */
 section {
-    padding: 5rem 0; /* Original padding */
+    padding: 5rem 0;
 }
 
 .section-title {
     text-align: center;
-    margin-bottom: 3rem; /* Original margin */
+    margin-bottom: 3rem;
     font-size: 2.5rem;
     color: var(--primary-dark);
 }
@@ -529,12 +525,6 @@ footer {
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
-        font-size: 1.3rem; /* Smaller font for mobile */
-        white-space: nowrap; /* Ensure single line */
-    }
-    
-    .logo-img {
-        height: 35px; /* Slightly smaller logo for mobile */
     }
     
     /* Features Grid */
@@ -543,9 +533,9 @@ footer {
         gap: 20px;
     }
     
-    /* REMOVE EXPLORE SERVICES BUTTON IN MOBILE */
-    .hero .btn-primary {
-        display: none; /* Remove Explore Services button */
+    /* Hero adjustments */
+    .hero-content p {
+        font-size: 1.1rem;
     }
 }
 
@@ -558,7 +548,6 @@ footer {
     /* Smaller logo for mobile */
     .logo {
         font-size: 1.2rem;
-        white-space: nowrap;
     }
     
     .logo-img {
@@ -567,7 +556,7 @@ footer {
     
     /* Hero full width on mobile - fixed margins */
     .hero {
-        margin-top: 100px; /* Original mobile margin */
+        margin-top: 70px;
         width: 100%;
         margin-left: 0;
         margin-right: 0;
@@ -575,7 +564,7 @@ footer {
     }
     
     .hero-background {
-        height: 400px; /* Original mobile height */
+        height: 500px; /* Increased height */
         border-radius: 0;
         width: 100%;
     }
@@ -586,13 +575,13 @@ footer {
     }
     
     .glass-panel {
-        margin: 0 20px; /* Original margin */
-        padding: 30px 20px; /* Original mobile padding */
+        margin: 0;
+        padding: 30px 20px;
         width: 100%;
     }
     
     .features {
-        margin-top: -80px; /* Original mobile negative margin */
+        margin-top: -80px;
         padding: 0 20px; /* Consistent side margins */
     }
     
@@ -618,7 +607,6 @@ footer {
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
-        white-space: nowrap;
     }
     
     .logo-img {
@@ -626,7 +614,17 @@ footer {
     }
     
     .hero-background {
-        height: 350px; /* Original small mobile height */
+        height: 450px; /* Adjusted for smaller screens */
+    }
+    
+    .hero-content p {
+        font-size: 1rem;
+    }
+    
+    .hero .btn-primary {
+        padding: 10px 20px;
+        font-size: 1rem;
+        border-radius: 30px;
     }
     
     .cards-container {
