@@ -557,12 +557,32 @@ footer {
         margin-left: 0;
         margin-right: 0;
         border-radius: 0;
+        padding: 0; /* Remove padding to make it full width */
     }
     
     .hero-background {
         height: 400px; /* Original mobile height */
         border-radius: 0;
         width: 100%;
+    }
+    
+    /* Smaller text in hero section for mobile */
+    .hero-content p {
+        font-size: 1rem; /* Reduced from 1.2rem */
+        margin-bottom: 20px; /* Reduced margin */
+    }
+    
+    /* Glass panel matches other cards width */
+    .glass-panel {
+        margin: 0; /* Remove side margins */
+        padding: 20px 15px; /* Reduced padding for mobile */
+        width: 100%;
+        max-width: none; /* Remove max-width constraint */
+    }
+    
+    .features {
+        margin-top: -60px; /* Reduced negative margin for shorter glass panel */
+        padding: 0 20px; /* Add padding to match other sections */
     }
 }
 
@@ -589,6 +609,7 @@ footer {
         margin-left: 0;
         margin-right: 0;
         border-radius: 0;
+        padding: 0; /* Remove padding to make it full width */
     }
     
     .hero-background {
@@ -596,8 +617,11 @@ footer {
         border-radius: 0;
         width: 100%;
     }
-    .hero-content .p {
-        font-size: 1rem:
+    
+    /* Even smaller text in hero section for tablet */
+    .hero-content p {
+        font-size: 0.95rem; /* Further reduced for tablet */
+        margin-bottom: 18px; /* Further reduced margin */
     }
     
     /* Consistent margins for all sections */
@@ -606,9 +630,10 @@ footer {
     }
     
     .glass-panel {
-        margin: 0 20px; /* Original margin */
+        margin: 0; /* Remove side margins */
         padding: 20px 15px; /* Reduced padding for mobile */
         width: 100%;
+        max-width: none; /* Remove max-width constraint */
     }
     
     .features {
@@ -666,6 +691,12 @@ footer {
         height: 350px; /* Original small mobile height */
     }
     
+    /* Smallest text in hero section for small mobile */
+    .hero-content p {
+        font-size: 0.9rem; /* Smallest size for small mobile */
+        margin-bottom: 15px; /* Smallest margin */
+    }
+    
     .cards-container {
         grid-template-columns: 1fr;
     }
@@ -705,4 +736,3 @@ footer {
         max-width: 1200px;
     }
 }
-
