@@ -1,125 +1,176 @@
-// Simple JavaScript for smooth scrolling
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        if (targetId !== '#') {
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                // Close mobile menu if open
-                const hamburger = document.getElementById('hamburger');
-                const navMenu = document.getElementById('nav-menu');
-                if (hamburger && navMenu) {
-                    hamburger.classList.remove('active');
-                    navMenu.classList.remove('active');
-                }
-                
-                // Smooth scroll to target
-                const offsetTop = targetElement.offsetTop - 80;
-                window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
-                });
-            }
+// DOM Elements
+const sidebar = document.getElementById('sidebar');
+const openSidebarBtn = document.getElementById('openSidebar');
+const closeSidebarBtn = document.getElementById('closeSidebar');
+const darkModeToggle = document.getElementById('darkModeToggle');
+const themeToggleBtn = document.getElementById('themeToggle');
+const carouselInner = document.querySelector('.carousel-inner');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const indicators = document.querySelectorAll('.indicator');
+const faqQuestions = document.querySelectorAll('.faq-question');
+const contactForm = document.getElementById('contactForm');
+const navLinks = document.querySelectorAll('.nav-link');
+
+// Carousel functionality
+let currentSlide = 0;
+const totalSlides = document.querySelectorAll('.carousel-item').length;
+
+function updateCarousel() {
+    carouselInner.style.transform = `translateX(-${currentSlide * 100}%)`;
+    
+    // Update indicators
+    indicators.forEach((indicator, index) => {
+        if (index === currentSlide) {
+            indicator.classList.add('active');
+        } else {
+            indicator.classList.remove('active');
         }
-    });
-});
-
-// Add scroll effect to header
-window.addEventListener('scroll', function() {
-    const header = document.querySelector('header');
-    if (window.scrollY > 50) {
-        header.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
-        header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
-    } else {
-        header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
-        header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.05)';
-    }
-});
-
-// Add hover effect to feature items
-document.querySelectorAll('.feature-item').forEach(item => {
-    item.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-5px)';
-        this.style.transition = 'transform 0.3s ease';
-    });
-    
-    item.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(0)';
-    });
-});
-
-// Add animation to hero section on page load
-window.addEventListener('load', function() {
-    const heroContent = document.querySelector('.hero-content');
-    heroContent.style.opacity = '0';
-    heroContent.style.transform = 'translateY(20px)';
-    
-    setTimeout(() => {
-        heroContent.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-        heroContent.style.opacity = '1';
-        heroContent.style.transform = 'translateY(0)';
-    }, 300);
-});
-
-// Mobile Navigation Toggle
-const hamburger = document.getElementById('hamburger');
-const navMenu = document.getElementById('nav-menu');
-
-if (hamburger) {
-    hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
     });
 }
 
-// Close mobile menu when clicking on a nav link or button
-document.querySelectorAll('nav a, .mobile-cta a').forEach(n => n.addEventListener('click', () => {
-    if (hamburger && navMenu) {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
-    }
-}));
-
-// Close mobile menu when clicking outside
-document.addEventListener('click', (e) => {
-    if (hamburger && navMenu && navMenu.classList.contains('active')) {
-        if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
-        }
-    }
+// Next slide
+nextBtn.addEventListener('click', () => {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    updateCarousel();
 });
 
-// FAQ Accordion - Fixed functionality
-const faqQuestions = document.querySelectorAll('.faq-question');
+// Previous slide
+prevBtn.addEventListener('click', () => {
+    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+    updateCarousel();
+});
 
+// Indicator click
+indicators.forEach(indicator => {
+    indicator.addEventListener('click', () => {
+        currentSlide = parseInt(indicator.getAttribute('data-index'));
+        updateCarousel();
+    });
+});
+
+// Auto slide every 5 seconds
+setInterval(() => {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    updateCarousel();
+}, 5000);
+
+// Sidebar functionality
+openSidebarBtn.addEventListener('click', () => {
+    sidebar.style.left = '0';
+});
+
+closeSidebarBtn.addEventListener('click', () => {
+    sidebar.style.left = '-300px';
+});
+
+// Close sidebar when clicking on a link
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        sidebar.style.left = '-300px';
+    });
+});
+
+// Dark mode functionality
+function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+    const isDarkMode = document.body.classList.contains('dark-mode');
+    localStorage.setItem('darkMode', isDarkMode);
+    
+    // Update toggle state
+    darkModeToggle.checked = isDarkMode;
+    
+    // Update theme button icon
+    const themeIcon = themeToggleBtn.querySelector('i');
+    if (isDarkMode) {
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+    } else {
+        themeIcon.classList.remove('fa-sun');
+        themeIcon.classList.add('fa-moon');
+    }
+}
+
+// Initialize dark mode from localStorage
+const savedDarkMode = localStorage.getItem('darkMode') === 'true';
+if (savedDarkMode) {
+    document.body.classList.add('dark-mode');
+    darkModeToggle.checked = true;
+    
+    // Update theme button icon
+    const themeIcon = themeToggleBtn.querySelector('i');
+    themeIcon.classList.remove('fa-moon');
+    themeIcon.classList.add('fa-sun');
+}
+
+darkModeToggle.addEventListener('change', toggleDarkMode);
+themeToggleBtn.addEventListener('click', toggleDarkMode);
+
+// FAQ functionality
 faqQuestions.forEach(question => {
     question.addEventListener('click', () => {
         const answer = question.nextElementSibling;
-        const toggle = question.querySelector('.faq-toggle');
-        
-        // Toggle current FAQ item
         const isActive = answer.classList.contains('active');
         
-        // Close all FAQ items first
-        document.querySelectorAll('.faq-answer').forEach(item => {
-            item.classList.remove('active');
+        // Close all answers
+        document.querySelectorAll('.faq-answer').forEach(ans => {
+            ans.classList.remove('active');
         });
         
-        document.querySelectorAll('.faq-toggle').forEach(item => {
-            item.textContent = '+';
+        // Remove active class from all questions
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.classList.remove('active');
         });
         
-        // If it wasn't active, open it
+        // If the clicked question wasn't active, open it
         if (!isActive) {
             answer.classList.add('active');
-            toggle.textContent = '−';
+            question.classList.add('active');
         }
     });
 });
 
-// Initialize FAQ items to be closed
-document.querySelectorAll('.faq-answer').forEach(answer => {
-    answer.classList.remove('active');
+// Contact form submission
+contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    // Get form values
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const subject = document.getElementById('subject').value;
+    const message = document.getElementById('message').value;
+    
+    // In a real application, you would send this data to a server
+    console.log('Form submitted:', { name, email, subject, message });
+    
+    // Show success message (in a real app, you'd want something more user-friendly)
+    alert('Thank you for your message! We will get back to you soon.');
+    
+    // Reset form
+    contactForm.reset();
+});
+
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            window.scrollTo({
+                top: targetElement.offsetTop - 80,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+// Close sidebar when clicking outside of it
+document.addEventListener('click', (e) => {
+    if (!sidebar.contains(e.target) && !openSidebarBtn.contains(e.target) && sidebar.style.left === '0px') {
+        sidebar.style.left = '-300px';
+    }
 });
