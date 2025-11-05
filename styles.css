@@ -81,6 +81,19 @@ body {
     color: white;
 }
 
+/* Logo Placeholder */
+.logo-placeholder {
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-color);
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.2rem;
+}
+
 /* Header */
 .header {
     display: flex;
@@ -92,6 +105,18 @@ body {
     position: sticky;
     top: 0;
     z-index: 100;
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--secondary-color);
 }
 
 .menu-btn, .theme-btn {
@@ -106,12 +131,6 @@ body {
 
 .menu-btn:hover, .theme-btn:hover {
     color: var(--primary-color);
-}
-
-.logo {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--secondary-color);
 }
 
 /* Sidebar */
@@ -138,6 +157,12 @@ body {
     align-items: center;
     padding: 1.5rem;
     border-bottom: 1px solid var(--border-color);
+}
+
+.sidebar-logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 .sidebar-header h2 {
@@ -240,10 +265,20 @@ input:checked + .slider:before {
     padding: 2rem 0;
 }
 
+.hero-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.carousel-container {
+    width: 100%;
+}
+
 .carousel {
     position: relative;
     max-width: 100%;
-    margin: 0 auto 2rem;
+    margin: 0 auto;
     overflow: hidden;
     border-radius: 8px;
     box-shadow: var(--shadow);
@@ -590,6 +625,17 @@ input:checked + .slider:before {
     margin-bottom: 2rem;
 }
 
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer-logo .logo-placeholder {
+    background-color: white;
+    color: var(--secondary-color);
+}
+
 .footer-info h3 {
     margin-bottom: 1rem;
 }
@@ -664,12 +710,39 @@ input:checked + .slider:before {
         height: 400px;
     }
     
+    .hero-content-wrapper {
+        flex-direction: row;
+        align-items: center;
+        gap: 4rem;
+    }
+    
+    .carousel-container {
+        width: 50%;
+    }
+    
     .hero-content {
-        max-width: 800px;
-        margin: 0 auto;
+        width: 50%;
+        text-align: left;
+        padding: 0;
     }
     
     .sidebar {
         left: -300px;
+    }
+    
+    .logo-placeholder {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .carousel-container {
+        width: 45%;
+    }
+    
+    .hero-content {
+        width: 55%;
     }
 }
