@@ -12,6 +12,76 @@ const faqQuestions = document.querySelectorAll('.faq-question');
 const contactForm = document.getElementById('contactForm');
 const navLinks = document.querySelectorAll('.nav-link');
 
+// Create overlay element
+const overlay = document.createElement('div');
+overlay.className = 'overlay';
+document.body.appendChild(overlay);
+
+// Sidebar functionality
+function openSidebar() {
+    sidebar.classList.add('active');
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeSidebar() {
+    sidebar.classList.remove('active');
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+openSidebarBtn.addEventListener('click', openSidebar);
+closeSidebarBtn.addEventListener('click', closeSidebar);
+
+// Close sidebar when clicking on overlay
+overlay.addEventListener('click', closeSidebar);
+
+// Close sidebar when clicking on a link
+navLinks.forEach(link => {
+    link.addEventListener('click', closeSidebar);
+});
+
+// Dark mode functionality
+function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+    const isDarkMode = document.body.classList.contains('dark-mode');
+    localStorage.setItem('darkMode', isDarkMode);
+    
+    // Update toggle state
+    darkModeToggle.checked = isDarkMode;
+    
+    // Update theme button icon
+    const themeIcon = themeToggleBtn.querySelector('i');
+    if (isDarkMode) {
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+    } else {
+        themeIcon.classList.remove('fa-sun');
+        themeIcon.classList.add('fa-moon');
+    }
+}
+
+// Initialize dark mode from localStorage
+function initializeDarkMode() {
+    const savedDarkMode = localStorage.getItem('darkMode') === 'true';
+    if (savedDarkMode) {
+        document.body.classList.add('dark-mode');
+        darkModeToggle.checked = true;
+        
+        // Update theme button icon
+        const themeIcon = themeToggleBtn.querySelector('i');
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+    }
+}
+
+// Event listeners for dark mode
+darkModeToggle.addEventListener('change', toggleDarkMode);
+themeToggleBtn.addEventListener('click', () => {
+    darkModeToggle.checked = !darkModeToggle.checked;
+    toggleDarkMode();
+});
+
 // Carousel functionality
 let currentSlide = 0;
 const totalSlides = document.querySelectorAll('.carousel-item').length;
@@ -50,61 +120,22 @@ indicators.forEach(indicator => {
 });
 
 // Auto slide every 5 seconds
-setInterval(() => {
+let carouselInterval = setInterval(() => {
     currentSlide = (currentSlide + 1) % totalSlides;
     updateCarousel();
 }, 5000);
 
-// Sidebar functionality
-openSidebarBtn.addEventListener('click', () => {
-    sidebar.style.left = '0';
+// Pause auto-slide on hover
+carouselInner.addEventListener('mouseenter', () => {
+    clearInterval(carouselInterval);
 });
 
-closeSidebarBtn.addEventListener('click', () => {
-    sidebar.style.left = '-300px';
+carouselInner.addEventListener('mouseleave', () => {
+    carouselInterval = setInterval(() => {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateCarousel();
+    }, 5000);
 });
-
-// Close sidebar when clicking on a link
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        sidebar.style.left = '-300px';
-    });
-});
-
-// Dark mode functionality
-function toggleDarkMode() {
-    document.body.classList.toggle('dark-mode');
-    const isDarkMode = document.body.classList.contains('dark-mode');
-    localStorage.setItem('darkMode', isDarkMode);
-    
-    // Update toggle state
-    darkModeToggle.checked = isDarkMode;
-    
-    // Update theme button icon
-    const themeIcon = themeToggleBtn.querySelector('i');
-    if (isDarkMode) {
-        themeIcon.classList.remove('fa-moon');
-        themeIcon.classList.add('fa-sun');
-    } else {
-        themeIcon.classList.remove('fa-sun');
-        themeIcon.classList.add('fa-moon');
-    }
-}
-
-// Initialize dark mode from localStorage
-const savedDarkMode = localStorage.getItem('darkMode') === 'true';
-if (savedDarkMode) {
-    document.body.classList.add('dark-mode');
-    darkModeToggle.checked = true;
-    
-    // Update theme button icon
-    const themeIcon = themeToggleBtn.querySelector('i');
-    themeIcon.classList.remove('fa-moon');
-    themeIcon.classList.add('fa-sun');
-}
-
-darkModeToggle.addEventListener('change', toggleDarkMode);
-themeToggleBtn.addEventListener('click', toggleDarkMode);
 
 // FAQ functionality
 faqQuestions.forEach(question => {
@@ -143,7 +174,7 @@ contactForm.addEventListener('submit', (e) => {
     // In a real application, you would send this data to a server
     console.log('Form submitted:', { name, email, subject, message });
     
-    // Show success message (in a real app, you'd want something more user-friendly)
+    // Show success message
     alert('Thank you for your message! We will get back to you soon.');
     
     // Reset form
@@ -168,9 +199,15 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Close sidebar when clicking outside of it
-document.addEventListener('click', (e) => {
-    if (!sidebar.contains(e.target) && !openSidebarBtn.contains(e.target) && sidebar.style.left === '0px') {
-        sidebar.style.left = '-300px';
+// Initialize everything when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    initializeDarkMode();
+    updateCarousel();
+});
+
+// Close sidebar on escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && sidebar.classList.contains('active')) {
+        closeSidebar();
     }
 });
