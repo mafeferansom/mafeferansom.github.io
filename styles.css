@@ -275,7 +275,7 @@ input:checked + .slider:before {
     border-radius: 50%;
 }
 
-/* Hero Section - UPDATED */
+/* Hero Section */
 .hero {
     padding: 2rem 0;
 }
@@ -320,8 +320,6 @@ input:checked + .slider:before {
     object-fit: cover;
     display: block;
 }
-
-/* REMOVED carousel-caption styles */
 
 .carousel-control {
     position: absolute;
@@ -494,6 +492,16 @@ input:checked + .slider:before {
     margin: 1rem 0;
 }
 
+/* Pricing Card Button Styles */
+.card-btn {
+    display: block;
+    width: 140px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+}
+
 /* Contact Section */
 .contact {
     padding: 4rem 0;
@@ -532,7 +540,6 @@ input:checked + .slider:before {
 .contact-item a:hover {
     color: var(--primary-color);
 }
-
 
 /* FAQ Section */
 .faq {
@@ -785,5 +792,10 @@ input:checked + .slider:before {
     .card-image {
         height: 180px;
     }
+    
+    .card-btn {
+        width: 120px;
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
 }
-
