@@ -134,7 +134,7 @@ body {
     flex-shrink: 0;
 }
 
-/* Logo Image - FIXED */
+/* Logo Image */
 .logo-img {
     width: 50px;
     height: 50px;
@@ -181,7 +181,7 @@ body {
 }
 
 .sidebar-header h2 {
-    color: var(--secondary-color;
+    color: var(--secondary-color);
 }
 
 .close-btn {
@@ -275,18 +275,23 @@ input:checked + .slider:before {
     border-radius: 50%;
 }
 
-/* Hero Section - FIXED */
+/* Hero Section - UPDATED */
 .hero {
     padding: 2rem 0;
 }
 
-.carousel {
-    position: relative;
+.carousel-container {
+    width: 100%;
     max-width: 100%;
     margin: 0 auto 2rem;
+}
+
+.carousel {
+    position: relative;
     overflow: hidden;
     border-radius: 8px;
     box-shadow: var(--shadow);
+    margin: 0 auto;
 }
 
 .carousel-inner {
@@ -305,7 +310,7 @@ input:checked + .slider:before {
 
 .carousel-image {
     position: relative;
-    height: 400px;
+    height: 300px;
     overflow: hidden;
 }
 
@@ -316,22 +321,7 @@ input:checked + .slider:before {
     display: block;
 }
 
-.carousel-caption {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 1.5rem;
-    text-align: center;
-}
-
-.carousel-caption p {
-    margin: 0;
-    font-size: 1.5rem;
-    font-weight: 600;
-}
+/* REMOVED carousel-caption styles */
 
 .carousel-control {
     position: absolute;
@@ -340,8 +330,8 @@ input:checked + .slider:before {
     background: rgba(0, 0, 0, 0.5);
     color: white;
     border: none;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -349,7 +339,7 @@ input:checked + .slider:before {
     cursor: pointer;
     transition: var(--transition);
     z-index: 10;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 .carousel-control:hover {
@@ -357,16 +347,16 @@ input:checked + .slider:before {
 }
 
 .carousel-control.prev {
-    left: 20px;
+    left: 15px;
 }
 
 .carousel-control.next {
-    right: 20px;
+    right: 15px;
 }
 
 .carousel-indicators {
     position: absolute;
-    bottom: 20px;
+    bottom: 15px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -375,8 +365,8 @@ input:checked + .slider:before {
 }
 
 .indicator {
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.5);
     cursor: pointer;
@@ -435,7 +425,7 @@ input:checked + .slider:before {
     margin-bottom: 0.5rem;
 }
 
-/* Pricing Section - FIXED */
+/* Pricing Section */
 .pricing {
     padding: 4rem 0;
 }
@@ -462,7 +452,7 @@ input:checked + .slider:before {
 }
 
 .card-image {
-    height: 250px;
+    height: 200px;
     overflow: hidden;
     flex-shrink: 0;
 }
@@ -543,6 +533,65 @@ input:checked + .slider:before {
     color: var(--primary-color);
 }
 
+.map-placeholder {
+    width: 100%;
+    height: 150px;
+    background-color: var(--secondary-color);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.map-placeholder:hover {
+    background-color: #144566;
+}
+
+.contact-form {
+    background-color: var(--bg-color);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.contact-form h3 {
+    margin-bottom: 1.5rem;
+    color: var(--secondary-color);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    transition: var(--transition);
+    font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
 /* FAQ Section */
 .faq {
     padding: 4rem 0;
@@ -596,7 +645,7 @@ input:checked + .slider:before {
     max-height: 500px;
 }
 
-/* Footer - FIXED */
+/* Footer */
 .footer {
     background-color: var(--secondary-color);
     color: white;
@@ -688,11 +737,13 @@ input:checked + .slider:before {
     }
     
     .carousel-image {
-        height: 500px;
+        height: 350px;
     }
     
-    .carousel-caption p {
-        font-size: 1.8rem;
+    .carousel-control {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
     }
     
     .about-content {
@@ -709,8 +760,13 @@ input:checked + .slider:before {
 }
 
 @media (min-width: 992px) {
+    .carousel-container {
+        width: 80%;
+        max-width: 1000px;
+    }
+    
     .carousel-image {
-        height: 600px;
+        height: 400px;
     }
     
     .hero-content {
@@ -728,7 +784,18 @@ input:checked + .slider:before {
     }
     
     .card-image {
-        height: 280px;
+        height: 220px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .carousel-container {
+        width: 70%;
+        max-width: 900px;
+    }
+    
+    .carousel-image {
+        height: 450px;
     }
 }
 
@@ -751,24 +818,29 @@ input:checked + .slider:before {
     }
     
     .carousel-image {
-        height: 300px;
-    }
-    
-    .carousel-caption {
-        padding: 1rem;
-    }
-    
-    .carousel-caption p {
-        font-size: 1.2rem;
+        height: 250px;
     }
     
     .carousel-control {
-        width: 40px;
-        height: 40px;
-        font-size: 1rem;
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
+    
+    .carousel-control.prev {
+        left: 10px;
+    }
+    
+    .carousel-control.next {
+        right: 10px;
+    }
+    
+    .indicator {
+        width: 8px;
+        height: 8px;
     }
     
     .card-image {
-        height: 200px;
+        height: 180px;
     }
 }
