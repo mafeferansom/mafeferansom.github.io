@@ -497,7 +497,7 @@ input:checked + .slider:before {
     display: block;
     width: 140px;
     margin: 0 auto;
-    text-align: center;
+    text-align: left;
     padding: 0.6rem 1.2rem;
     font-size: 0.9rem;
     align-self: left;
@@ -800,4 +800,5 @@ input:checked + .slider:before {
         font-size: 0.85rem;
     }
 }
+
 
