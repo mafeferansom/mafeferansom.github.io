@@ -81,19 +81,6 @@ body {
     color: white;
 }
 
-/* Logo Placeholder */
-.logo-placeholder {
-    width: 40px;
-    height: 40px;
-    background-color: var(--primary-color);
-    border-radius: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 1.2rem;
-}
-
 /* Header */
 .header {
     display: flex;
@@ -105,18 +92,24 @@ body {
     position: sticky;
     top: 0;
     z-index: 100;
+    flex-wrap: nowrap;
+    gap: 1rem;
 }
 
 .header-logo {
     display: flex;
     align-items: center;
     gap: 1rem;
+    flex-shrink: 0;
+    white-space: nowrap;
 }
 
 .logo {
     font-size: 1.25rem;
     font-weight: 700;
     color: var(--secondary-color);
+    margin: 0;
+    line-height: 1.2;
 }
 
 .menu-btn, .theme-btn {
@@ -127,10 +120,32 @@ body {
     cursor: pointer;
     transition: var(--transition);
     padding: 0.5rem;
+    flex-shrink: 0;
 }
 
 .menu-btn:hover, .theme-btn:hover {
     color: var(--primary-color);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-shrink: 0;
+}
+
+/* Logo Placeholder */
+.logo-placeholder {
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-color);
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.2rem;
+    flex-shrink: 0;
 }
 
 /* Sidebar */
@@ -688,6 +703,12 @@ input:checked + .slider:before {
         font-size: 1.5rem;
     }
     
+    .logo-placeholder {
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
+    }
+    
     .hero-content h2 {
         font-size: 2.5rem;
     }
@@ -744,5 +765,25 @@ input:checked + .slider:before {
     
     .hero-content {
         width: 55%;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 1rem;
+    }
+    
+    .logo {
+        font-size: 1.1rem;
+    }
+    
+    .logo-placeholder {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+    
+    .header-logo {
+        gap: 0.75rem;
     }
 }
