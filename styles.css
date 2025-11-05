@@ -101,6 +101,7 @@ body {
     color: var(--text-color);
     cursor: pointer;
     transition: var(--transition);
+    padding: 0.5rem;
 }
 
 .menu-btn:hover, .theme-btn:hover {
@@ -117,7 +118,7 @@ body {
 .sidebar {
     position: fixed;
     top: 0;
-    left: -300px;
+    left: -100%;
     width: 300px;
     height: 100%;
     background-color: var(--card-bg);
@@ -149,6 +150,7 @@ body {
     font-size: 1.5rem;
     color: var(--text-color);
     cursor: pointer;
+    padding: 0.5rem;
 }
 
 .sidebar-links {
@@ -287,6 +289,7 @@ input:checked + .slider:before {
     align-items: center;
     cursor: pointer;
     transition: var(--transition);
+    z-index: 10;
 }
 
 .carousel-control:hover {
@@ -308,6 +311,7 @@ input:checked + .slider:before {
     transform: translateX(-50%);
     display: flex;
     gap: 10px;
+    z-index: 10;
 }
 
 .indicator {
@@ -510,6 +514,7 @@ input:checked + .slider:before {
     background-color: var(--card-bg);
     color: var(--text-color);
     transition: var(--transition);
+    font-family: inherit;
 }
 
 .form-group input:focus,
@@ -611,6 +616,22 @@ input:checked + .slider:before {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* Overlay for sidebar */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none;
+}
+
+.overlay.active {
+    display: block;
+}
+
 /* Media Queries */
 @media (min-width: 768px) {
     .header {
@@ -646,5 +667,9 @@ input:checked + .slider:before {
     .hero-content {
         max-width: 800px;
         margin: 0 auto;
+    }
+    
+    .sidebar {
+        left: -300px;
     }
 }
