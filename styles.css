@@ -799,5 +799,167 @@ input:checked + .slider:before {
     }
 }
 
+/* Analysis Process Section */
+.process {
+    padding: 4rem 0;
+    background-color: var(--bg-color);
+}
+
+.process-subtitle {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.dark-mode .process-subtitle {
+    color: #aaa;
+}
+
+.process-steps {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.process-steps::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 40px;
+    width: 2px;
+    background-color: var(--border-color);
+    z-index: 1;
+}
+
+.process-step {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 2;
+}
+
+.step-number {
+    position: relative;
+    margin-right: 2rem;
+    flex-shrink: 0;
+}
+
+.step-number span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background-color: var(--secondary-color);
+    color: white;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight: 700;
+    position: relative;
+}
+
+.step-icon {
+    position: absolute;
+    bottom: -5px;
+    right: -5px;
+    width: 30px;
+    height: 30px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 0.9rem;
+}
+
+.step-content {
+    flex-grow: 1;
+    padding-top: 1rem;
+}
+
+.step-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--secondary-color);
+}
+
+.step-content p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.dark-mode .step-content p {
+    color: #aaa;
+}
+
+/* Media Queries for Process Section */
+@media (max-width: 768px) {
+    .process-steps::before {
+        left: 30px;
+    }
+    
+    .step-number {
+        margin-right: 1.5rem;
+    }
+    
+    .step-number span {
+        width: 60px;
+        height: 60px;
+        font-size: 1.2rem;
+    }
+    
+    .step-icon {
+        width: 25px;
+        height: 25px;
+        font-size: 0.8rem;
+        bottom: -3px;
+        right: -3px;
+    }
+    
+    .step-content h3 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .process-steps::before {
+        left: 25px;
+    }
+    
+    .step-number {
+        margin-right: 1rem;
+    }
+    
+    .step-number span {
+        width: 50px;
+        height: 50px;
+        font-size: 1rem;
+    }
+    
+    .step-icon {
+        width: 20px;
+        height: 20px;
+        font-size: 0.7rem;
+        bottom: -2px;
+        right: -2px;
+    }
+    
+    .step-content h3 {
+        font-size: 1.2rem;
+    }
+    
+    .process-subtitle {
+        font-size: 1rem;
+        padding: 0 1rem;
+    }
+}
+
 
 
