@@ -162,24 +162,26 @@ faqQuestions.forEach(question => {
 });
 
 // Contact form submission
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    // Get form values
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const subject = document.getElementById('subject').value;
-    const message = document.getElementById('message').value;
-    
-    // In a real application, you would send this data to a server
-    console.log('Form submitted:', { name, email, subject, message });
-    
-    // Show success message
-    alert('Thank you for your message! We will get back to you soon.');
-    
-    // Reset form
-    contactForm.reset();
-});
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Get form values
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const subject = document.getElementById('subject').value;
+        const message = document.getElementById('message').value;
+        
+        // In a real application, you would send this data to a server
+        console.log('Form submitted:', { name, email, subject, message });
+        
+        // Show success message
+        alert('Thank you for your message! We will get back to you soon.');
+        
+        // Reset form
+        contactForm.reset();
+    });
+}
 
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -199,10 +201,40 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// Process section animation on scroll
+function animateProcessSection() {
+    const processSteps = document.querySelectorAll('.process-step');
+    const observerOptions = {
+        threshold: 0.3,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    processSteps.forEach((step, index) => {
+        step.style.opacity = '0';
+        step.style.transform = 'translateY(20px)';
+        step.style.transition = `opacity 0.6s ease ${index * 0.2}s, transform 0.6s ease ${index * 0.2}s`;
+        observer.observe(step);
+    });
+}
+
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     initializeDarkMode();
     updateCarousel();
+    
+    // Initialize process section animations
+    if (document.querySelector('.process-steps')) {
+        animateProcessSection();
+    }
 });
 
 // Close sidebar on escape key
@@ -210,4 +242,35 @@ document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape' && sidebar.classList.contains('active')) {
         closeSidebar();
     }
+});
+
+// Handle responsive behavior for process section
+function handleProcessSectionResponsive() {
+    const processSteps = document.querySelector('.process-steps');
+    if (!processSteps) return;
+
+    if (window.innerWidth < 768) {
+        processSteps.style.paddingLeft = '20px';
+    } else {
+        processSteps.style.paddingLeft = '0';
+    }
+}
+
+// Listen for window resize
+window.addEventListener('resize', handleProcessSectionResponsive);
+
+// Initial call for responsive behavior
+handleProcessSectionResponsive();
+
+// Add loading state for better UX
+window.addEventListener('load', function() {
+    document.body.classList.add('loaded');
+    
+    // Add slight delay for process section animation
+    setTimeout(() => {
+        const processSection = document.getElementById('process');
+        if (processSection) {
+            processSection.style.opacity = '1';
+        }
+    }, 300);
 });
