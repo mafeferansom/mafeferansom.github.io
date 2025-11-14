@@ -51,6 +51,10 @@ function toggleDarkMode() {
     darkModeToggle.checked = isDarkMode;
     
     // Update theme button icon
+    updateThemeIcon(isDarkMode);
+}
+
+function updateThemeIcon(isDarkMode) {
     const themeIcon = themeToggleBtn.querySelector('i');
     if (isDarkMode) {
         themeIcon.classList.remove('fa-moon');
@@ -61,17 +65,55 @@ function toggleDarkMode() {
     }
 }
 
-// Initialize dark mode from localStorage
+// Check system preference for dark mode
+function checkSystemPreference() {
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+}
+
+// Initialize dark mode from localStorage or system preference
 function initializeDarkMode() {
-    const savedDarkMode = localStorage.getItem('darkMode') === 'true';
-    if (savedDarkMode) {
-        document.body.classList.add('dark-mode');
-        darkModeToggle.checked = true;
+    const savedDarkMode = localStorage.getItem('darkMode');
+    
+    if (savedDarkMode !== null) {
+        // Use saved preference
+        const isDarkMode = savedDarkMode === 'true';
+        if (isDarkMode) {
+            document.body.classList.add('dark-mode');
+        }
+        darkModeToggle.checked = isDarkMode;
+        updateThemeIcon(isDarkMode);
+    } else {
+        // Use system preference if no saved preference
+        const systemPrefersDark = checkSystemPreference();
+        if (systemPrefersDark) {
+            document.body.classList.add('dark-mode');
+            darkModeToggle.checked = true;
+            updateThemeIcon(true);
+            localStorage.setItem('darkMode', 'true');
+        }
+    }
+}
+
+// Listen for system preference changes
+function watchSystemPreference() {
+    if (window.matchMedia) {
+        const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
         
-        // Update theme button icon
-        const themeIcon = themeToggleBtn.querySelector('i');
-        themeIcon.classList.remove('fa-moon');
-        themeIcon.classList.add('fa-sun');
+        mediaQuery.addEventListener('change', (e) => {
+            // Only apply system preference if user hasn't manually set preference
+            const savedDarkMode = localStorage.getItem('darkMode');
+            if (savedDarkMode === null) {
+                const isDarkMode = e.matches;
+                if (isDarkMode) {
+                    document.body.classList.add('dark-mode');
+                } else {
+                    document.body.classList.remove('dark-mode');
+                }
+                darkModeToggle.checked = isDarkMode;
+                updateThemeIcon(isDarkMode);
+                localStorage.setItem('darkMode', isDarkMode.toString());
+            }
+        });
     }
 }
 
@@ -229,12 +271,18 @@ function animateProcessSection() {
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     initializeDarkMode();
+    watchSystemPreference();
     updateCarousel();
     
     // Initialize process section animations
     if (document.querySelector('.process-steps')) {
         animateProcessSection();
     }
+    
+    // Add smooth transition after initial load
+    setTimeout(() => {
+        document.body.style.transition = 'var(--transition)';
+    }, 100);
 });
 
 // Close sidebar on escape key
@@ -274,3 +322,15 @@ window.addEventListener('load', function() {
         }
     }, 300);
 });
+
+// Debug function to check current dark mode state
+function debugDarkMode() {
+    console.log('Dark Mode Debug:');
+    console.log('- System prefers dark:', checkSystemPreference());
+    console.log('- Local storage value:', localStorage.getItem('darkMode'));
+    console.log('- Current dark mode class:', document.body.classList.contains('dark-mode'));
+    console.log('- Toggle checked:', darkModeToggle.checked);
+}
+
+// Uncomment the line below to enable debug logging
+// debugDarkMode();
